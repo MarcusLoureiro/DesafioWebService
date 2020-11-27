@@ -7,11 +7,13 @@
     android:layout_marginEnd="10dp"
     android:backgroundTint="@color/fundo"
     android:layout_gravity="center">
+
     <ImageView
         android:id="@+id/imgHq"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:src="@drawable/img_splash"/>
+        android:layout_width="122dp"
+        android:layout_height="171dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_splash" />
     <TextView
         android:id="@+id/tvNumber"
         android:layout_width="wrap_content"

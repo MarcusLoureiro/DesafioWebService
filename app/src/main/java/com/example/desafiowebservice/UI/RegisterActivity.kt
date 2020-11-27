@@ -1,8 +1,9 @@
-package com.example.desafiowebservice
+package com.example.desafiowebservice.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.desafiowebservice.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -13,9 +14,9 @@ class RegisterActivity : AppCompatActivity() {
         toolbarRegister.setNavigationOnClickListener {
             finish()
         }
-//        btSave.setOnClickListener {
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
-//        }
+        btSave.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

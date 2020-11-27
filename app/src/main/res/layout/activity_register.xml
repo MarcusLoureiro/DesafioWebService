@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.LoginActivity"
+    android:background="@color/fundo"
     android:orientation="vertical"
-    android:background="@color/fundo">
+    tools:context=".UI.LoginActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_media_selected"
@@ -15,11 +15,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarRegister"
-            app:title="@string/Register"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/fundoCard"
             app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/Register"
             app:titleTextColor="@color/white">
 
         </androidx.appcompat.widget.Toolbar>
@@ -27,91 +27,120 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="@color/fundoCard"
-        android:layout_gravity="center|top"
-        app:cardCornerRadius="10dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center">
 
         <androidx.cardview.widget.CardView
+            android:layout_width="349dp"
+            android:layout_height="390dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/fundoCard"
+            app:cardCornerRadius="10dp">
 
-            android:layout_width="match_parent"
-            android:layout_height="335dp"
-            android:layout_marginTop="75dp"
-            app:cardCornerRadius="15dp"
-            android:backgroundTint="@color/white">
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="330dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center|top"
-                app:hintTextColor="@color/fundoCard"
-                app:boxStrokeColor="@color/black">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:autofillHints=""
-                    android:backgroundTint="@color/white"
-                    android:hint="@string/hint_name"
-                    android:textCursorDrawable="@color/fundoCard"
-                    android:inputType="text" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="400dp"
+                    android:src="@drawable/perfil" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="335dp"
+                android:layout_marginTop="75dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="20dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/fundoCard">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_name"
+                        android:inputType="text"
+                        android:textCursorDrawable="@color/fundoCard" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="330dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="80dp"
-                android:layout_gravity="center|top"
-                app:hintTextColor="@color/fundoCard"
-                app:boxStrokeColor="@color/black">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="80dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/fundoCard">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:autofillHints=""
-                    android:backgroundTint="@color/white"
-                    android:hint="@string/hint_email"
-                    android:textCursorDrawable="@color/fundoCard"
-                    android:inputType="textEmailAddress" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_email"
+                        android:inputType="textEmailAddress"
+                        android:textCursorDrawable="@color/fundoCard" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="330dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="140dp"
-                android:layout_gravity="center|top"
-                app:hintTextColor="@color/fundoCard"
-                app:boxStrokeColor="@color/black">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="140dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/fundoCard">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textEmailAddress"
-                    android:backgroundTint="@color/white"
-                    android:hint="@string/hint_password"
-                    android:textCursorDrawable="@color/fundoCard"
-                    android:importantForAutofill="no" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_password"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:textCursorDrawable="@color/fundoCard" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btSave"
-                android:layout_width="330dp"
-                android:layout_height="50dp"
-                android:text="@string/btSave"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="40dp"
-                android:backgroundTint="@color/fundoCard"/>
+                <Button
+                    android:id="@+id/btSave"
+                    android:layout_width="330dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="40dp"
+                    android:backgroundTint="@color/fundoCard"
+                    android:text="@string/btSave" />
+
+            </androidx.cardview.widget.CardView>
+
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
-
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="103dp"
+            android:layout_marginTop="127dp"
+            android:src="@drawable/perfil" />
+    </RelativeLayout>
 </LinearLayout>

@@ -3,10 +3,8 @@ package com.example.desafiowebservice.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.desafiowebservice.Models.Hq
+import com.example.desafiowebservice.Entities.Hq
 import com.example.desafiowebservice.R
 import com.squareup.picasso.Picasso
 

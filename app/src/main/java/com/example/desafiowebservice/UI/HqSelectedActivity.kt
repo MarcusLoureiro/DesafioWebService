@@ -18,7 +18,6 @@ class HqSelectedActivity : AppCompatActivity() {
 
     private fun setFragment(){
 
-
         val adapter = ViewPagerHomeAdapter(supportFragmentManager)
         adapter.addFragment(HqSelectedFragment(), "HQ")
         viewPager_HomePage.adapter = adapter

@@ -7,13 +7,14 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.desafiowebservice.Adapters.HqAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.desafiowebservice.Adapters.ResAdapter
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.Service.service
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var hqAdapter: HqAdapter
+    private lateinit var hqAdapter: ResAdapter
     private lateinit var lManager: LinearLayoutManager
 
     private val viewModel by viewModels<MainViewModel> {
@@ -28,25 +29,38 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        lManager = LinearLayoutManager(this)
-        rvHqs.layoutManager = lManager
 
-        hqAdapter = HqAdapter()
+
+        lManager = LinearLayoutManager(this)
+        hqAdapter = ResAdapter()
+        rvHqs.layoutManager = lManager
         rvHqs.adapter = hqAdapter
+        rvHqs.hasFixedSize()
+
+
+
+        viewModel.listResult.observe(this) {
+           hqAdapter.addHq(it)
+        }
 
         viewModel.getAllResults()
 
-        viewModel.listResult.observe(this){
-                Log.i("Home", it.toString())
-        }
+        setScroller()
+    }
 
-
-//        viewModel.listResult.observe(this) {
-//            hqAdapter.addHq(it)
-//
-//        }
-
-
-
+    fun setScroller(){
+        rvHqs.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if(dy > 0){
+                    val litem = lManager.itemCount
+                    val vItem  = lManager.findFirstCompletelyVisibleItemPosition()
+                    val itens = hqAdapter.itemCount
+                    if(litem + vItem >= itens){
+                        Log.i("TAG", "Chamou")
+                    }
+                }
+            }
+        })
     }
 }

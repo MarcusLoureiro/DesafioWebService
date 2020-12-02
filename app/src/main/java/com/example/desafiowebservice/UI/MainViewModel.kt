@@ -4,6 +4,7 @@ package com.example.desafiowebservice.UI
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.desafiowebservice.Entities.SpiderMan.Data
 import com.example.desafiowebservice.Entities.SpiderMan.Res
 import com.example.desafiowebservice.Entities.SpiderMan.Results
 import com.example.desafiowebservice.Service.Service
@@ -12,12 +13,12 @@ import kotlinx.coroutines.launch
 class MainViewModel(val service: Service) : ViewModel() {
 
 
-    var listResult = MutableLiveData<Res>()
+    var listRes = MutableLiveData<Res>()
 
 
-    fun getAllResults() {
+    fun getAllResults(){
         viewModelScope.launch {
-            listResult.value = service.getAllResults(
+            listRes.value = service.getAllResults(
                 1,
                 10,
                 "1",
@@ -26,6 +27,7 @@ class MainViewModel(val service: Service) : ViewModel() {
             )
 
         }
+
 
     }
 

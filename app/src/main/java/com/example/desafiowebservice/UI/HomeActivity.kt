@@ -6,9 +6,11 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservice.Adapters.ResAdapter
+import com.example.desafiowebservice.Entities.SpiderMan.Res
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.Service.service
 import kotlinx.android.synthetic.main.activity_home.*
@@ -16,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity : AppCompatActivity() {
     private lateinit var hqAdapter: ResAdapter
     private lateinit var lManager: LinearLayoutManager
+    private lateinit var listHqs : Res
 
     private val viewModel by viewModels<MainViewModel> {
         object : ViewModelProvider.Factory {
@@ -28,26 +31,27 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        listHqs = Res()
 
 
 
-        lManager = LinearLayoutManager(this)
-        hqAdapter = ResAdapter()
+
+        lManager = GridLayoutManager(this, 3, LinearLayoutManager.VERTICAL, false)
+        hqAdapter = ResAdapter(listHqs)
         rvHqs.layoutManager = lManager
         rvHqs.adapter = hqAdapter
         rvHqs.hasFixedSize()
 
 
 
-        viewModel.listResult.observe(this) {
-           hqAdapter.addHq(it)
+        viewModel.listRes.observe(this) {
+         hqAdapter.addHq(it)
         }
 
         viewModel.getAllResults()
 
         setScroller()
     }
-
     fun setScroller(){
         rvHqs.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {

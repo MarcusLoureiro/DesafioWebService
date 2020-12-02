@@ -17,9 +17,19 @@ class HqSelectedActivity : AppCompatActivity() {
 
 
     private fun setFragment(){
-
+        val bundle = intent.extras
         val adapter = ViewPagerHomeAdapter(supportFragmentManager)
-        adapter.addFragment(HqSelectedFragment(), "HQ")
-        viewPager_HomePage.adapter = adapter
+        if (bundle != null) {
+            val title = bundle.getString("title")
+            val price = bundle.getDouble("price")
+            val thumbnail = bundle.getString("thumbnail")
+            val date = bundle.getString("date")
+            val description = bundle.getString("description")
+            val pages = bundle.getInt("pages")
+            val number = bundle.getInt("number")
+            val variant = bundle.getString("variant")
+            adapter.addFragment(HqSelectedFragment(title, description, thumbnail, price, date, pages, number, variant), "HQ")
+            viewPager_HomePage.adapter = adapter
+        }
     }
 }

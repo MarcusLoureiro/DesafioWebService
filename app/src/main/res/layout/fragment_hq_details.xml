@@ -11,56 +11,72 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarRegister"
-            android:layout_width="match_parent"
-            android:layout_height="219dp"
-            android:background="@drawable/spider"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            app:titleTextColor="@color/white">
 
-        </androidx.appcompat.widget.Toolbar>
+
+       <ImageView
+           android:id="@+id/img_fundo"
+           android:layout_width="match_parent"
+           android:layout_height="250dp"
+           android:scaleType="fitXY"/>
 
         <ImageView
-            android:id="@+id/imgHqExpansive"
-            android:layout_width="120dp"
+            android:id="@+id/img_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_arrow_back" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="140dp"
             android:layout_height="180dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/img_splash"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.98"
-            tools:ignore="MissingConstraints" />
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="3dp">
+
+
+
+            <ImageView
+                android:id="@+id/imgHqExpansive"
+                android:layout_width ="match_parent"
+                android:layout_height ="match_parent"
+                android:background ="@drawable/borda_hq"
+                android:scaleType ="fitXY"
+                android:src ="@drawable/raster"/>
+        </com.google.android.material.card.MaterialCardView>
+
+
 
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="52dp"
+        android:layout_margin="20dp"
+        android:gravity="start"
         android:text="Título hq"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <TextView
         android:id="@+id/tvDetais"
-        android:layout_width="367dp"
-        android:layout_height="194dp"
+        android:layout_width="369dp"
+        android:layout_height="150dp"
         android:layout_margin="20dp"
         android:text="detalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhesdetalhes"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -69,92 +85,93 @@
         app:layout_constraintVertical_bias="0.67" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price:"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <TextView
-        android:id="@+id/tvPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$ 5.00"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pages:"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
-
-    <TextView
         android:id="@+id/tvData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
         android:text="April 30, 2014"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
-
-    <TextView
-        android:id="@+id/tvPages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="38
-"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Published:"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.819" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pages:"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 5.00"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <TextView
+        android:id="@+id/tvPages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="38"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,8 +19,8 @@ class MainViewModel(val service: Service) : ViewModel() {
     fun getAllResults(){
         viewModelScope.launch {
             listRes.value = service.getAllResults(
-                1,
-                10,
+                0,
+                20,
                 "1",
                 "6eb7e8896ec5850c52515a8a23ee97f0",
                 "40a3aa568bb269dfad85ae0c4a297181"

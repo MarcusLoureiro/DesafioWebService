@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.desafiowebservice">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DesafioWebService">
-        <activity android:name=".UI.HqSelectedActivity"/>
+        <activity android:name=".UI.HqExpansiveActivity"></activity>
+        <activity android:name=".UI.HqSelectedActivity" />
         <activity android:name=".UI.HomeActivity" />
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.LoginActivity" />

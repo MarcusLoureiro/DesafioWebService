@@ -1,12 +1,14 @@
 package com.example.desafiowebservice.Entities.SpiderMan
 
+import java.io.Serializable
+
 data class Res(val data: Data = Data())
 
 data class Data(val offset: Int = 0, var results: ArrayList<Results> = arrayListOf())
 
 data class Results (
     val id : Int,
-    val issueNumber : Int,
+    val issueNumber : Double,
     val variantDescription : String,
     val title : String,
     val description : String,

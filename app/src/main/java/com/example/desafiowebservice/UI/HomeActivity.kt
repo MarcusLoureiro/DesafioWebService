@@ -1,5 +1,6 @@
 package com.example.desafiowebservice.UI
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,11 +15,14 @@ import com.example.desafiowebservice.Entities.SpiderMan.Res
 import com.example.desafiowebservice.R
 import com.example.desafiowebservice.Service.service
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlin.math.log
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), ResAdapter.OnHqClickListener {
     private lateinit var hqAdapter: ResAdapter
     private lateinit var lManager: LinearLayoutManager
-    private lateinit var listHqs : Res
+    private lateinit var listHqs: Res
+
+
 
     private val viewModel by viewModels<MainViewModel> {
         object : ViewModelProvider.Factory {
@@ -36,35 +40,49 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-        lManager = GridLayoutManager(this, 3, LinearLayoutManager.VERTICAL, false)
-        hqAdapter = ResAdapter(listHqs)
+        lManager = GridLayoutManager(this, 3)
+        hqAdapter = ResAdapter(listHqs, this)
         rvHqs.layoutManager = lManager
         rvHqs.adapter = hqAdapter
         rvHqs.hasFixedSize()
 
 
-
-        viewModel.listRes.observe(this) {
-         hqAdapter.addHq(it)
+        viewModel.listRes.observe ( this ) {
+            hqAdapter.addHq (it)
+            Log.i("Tag", it.toString())
         }
 
         viewModel.getAllResults()
 
-        setScroller()
+        //setScroller ()
     }
-    fun setScroller(){
-        rvHqs.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if(dy > 0){
-                    val litem = lManager.itemCount
-                    val vItem  = lManager.findFirstCompletelyVisibleItemPosition()
-                    val itens = hqAdapter.itemCount
-                    if(litem + vItem >= itens){
-                        Log.i("TAG", "Chamou")
-                    }
-                }
-            }
-        })
+
+    override fun onItemClick(position: Int) {
+        viewModel.listRes.observe(this) {
+            hqAdapter.addHq(it)
+            Log.i("Tag click", it.toString())
+            hqAdapter.notifyDataSetChanged()
+        }
+
     }
+
+//    fun setScroller() {
+//        rvHqs.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+//                super.onScrolled(recyclerView, dx, dy)
+//                if (dy > 0) {
+//                    val litem = lManager.itemCount
+//                    val vItem = lManager.findFirstCompletelyVisibleItemPosition()
+//                    val itens = hqAdapter.itemCount
+//                    if (litem + vItem >= itens) {
+//                        viewModel.getAllResults(page+1)
+//                        page = page + 1
+//                        Log.i("PAGE",  page.toString())
+//                    }
+//                }
+//            }
+//        })
+//    }
+
+
 }
